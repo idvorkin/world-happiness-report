@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(curl -L -o pdfs/WHR2025.pdf https://files.worldhappiness.report/WHR25.pdf)",
+      "WebSearch",
+      "WebFetch(domain:files.worldhappiness.report)",
+      "Bash(curl -s -I -L \"https://files.worldhappiness.report/WHR24.pdf\")",
+      "Bash(for year in 24 23 22 21 20 19 18 17 16 15 14 13 12)",
+      "Bash(do)",
+      "Bash(url=\"https://files.worldhappiness.report/WHR$year.pdf\")",
+      "Bash(echo:*)",
+      "Bash(if curl -f -L -o \"WHR20$year.pdf\" \"$url\")",
+      "Bash(then)",
+      "Bash(else)",
+      "Bash(fi)",
+      "Bash(done)",
+      "Read(//Users/idvorkin/.config/**)",
+      "Bash(git add:*)",
+      "Bash(marker_single:*)",
+      "Bash(for year in 2012 2013 2015 2017 2018 2019 2020 2021 2022 2023 2024)",
+      "Bash(top:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
