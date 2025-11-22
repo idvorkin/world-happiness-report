@@ -19,7 +19,9 @@
       "Bash(git add:*)",
       "Bash(marker_single:*)",
       "Bash(for year in 2012 2013 2015 2017 2018 2019 2020 2021 2022 2023 2024)",
-      "Bash(top:*)"
+      "Bash(top:*)",
+      "Bash(pdfinfo:*)",
+      "Bash(sysctl:*)"
     ],
     "deny": [],
     "ask": []

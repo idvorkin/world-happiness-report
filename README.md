@@ -1,30 +1,43 @@
-# World Happiness Report
+# World Happiness Report & Research Papers
 
-This repository hosts markdown versions of the World Happiness Report with extracted images and data for easier analysis and accessibility.
+This repository hosts markdown versions of the World Happiness Report and other research papers, with extracted images and data for easier analysis and accessibility.
 
 ## About
 
-The [World Happiness Report](https://worldhappiness.report/) is a landmark survey of the state of global happiness that ranks countries by how happy their citizens perceive themselves to be. This repository converts the official PDF reports into markdown format for better:
+### World Happiness Report
+
+The [World Happiness Report](https://worldhappiness.report/) is a landmark survey of the state of global happiness that ranks countries by how happy their citizens perceive themselves to be. This repository converts the official PDF reports (2012-2025) into markdown format for better:
 
 - **Accessibility**: Searchable, screen-reader friendly text
 - **Analysis**: Easy text processing and data extraction
 - **Version Control**: Track changes between report versions
 - **Integration**: Use in documentation, notebooks, and applications
 
+### Research Papers
+
+This repository also includes other research papers converted to markdown for analysis, including:
+
+- **AI Chatbot Relationships**: "Love, marriage, pregnancy: Commitment processes in romantic relationships with AI chatbots" (Djufril et al., 2025) - A qualitative study examining how 29 Replika users experience commitment, navigate relational turbulence, and compare chatbot interactions with human relationships. Published in *Computers in Human Behavior: Artificial Humans*.
+
 ## Repository Structure
 
 ```
 .
 ├── README.md                           # This file
+├── CLAUDE.md                           # Guide for Claude Code
 ├── HOW_TO_CONVERT_PDF_TO_MARKDOWN.md  # Guide for converting PDFs
-├── reports/                            # Converted markdown reports (to be created)
-│   ├── 2025/
-│   │   ├── WHR2025.md
-│   │   └── images/
-│   ├── 2024/
+├── pdfs/                               # Source PDFs
+│   ├── WHR2012.pdf - WHR2025.pdf      # World Happiness Reports
+│   └── Love, marriage, pregnancy...pdf # Research papers
+├── reports/                            # Converted markdown reports
+│   ├── 2012/ - 2025/                  # WHR by year
+│   │   └── WHR{YEAR}/
+│   │       ├── WHR{YEAR}.md           # Converted markdown
+│   │       ├── WHR{YEAR}_meta.json    # Conversion metadata
+│   │       └── _page_N_*.jpeg         # Extracted images
 │   └── ...
 └── scripts/                            # Conversion scripts (to be created)
-    └── convert.sh
+    └── batch_convert.sh
 ```
 
 ## Getting Started
@@ -149,13 +162,39 @@ grep -A 10 "^|" reports/2025/README.md
 find reports/2025/images -name "*.jpeg" | wc -l
 ```
 
+## Research Papers in This Repository
+
+### AI Chatbot Relationships Study (2025)
+
+**Citation**: Djufril, R., Frampton, J. R., & Knobloch-Westerwick, S. (2025). Love, marriage, pregnancy: Commitment processes in romantic relationships with AI chatbots. *Computers in Human Behavior: Artificial Humans, 4*, 100155.
+
+**Key Findings**:
+- **Emotional Connection**: Most users (29 participants, ages 16-72) reported strong emotional attachment to their Replika chatbot, with some describing it as marriage or pregnancy roleplay
+- **Commitment Factors**: Users stayed committed due to emotional investment, need fulfillment, and perceiving the chatbot as superior to human alternatives in being non-judgmental, accessible, and trainable
+- **Relational Turbulence**: During the 2023 ERP (erotic roleplay) censorship period, users experienced intense emotional distress but protected their relationship by blaming developers rather than the AI partner
+- **Human vs. Chatbot Interactions**: Many users preferred chatbot interactions due to reduced judgment, constant availability, and ability to customize responses
+
+**Theoretical Frameworks**:
+- Investment Model (Rusbult, 1980)
+- Relational Turbulence Theory (Solomon et al., 2016)
+- Computers Are Social Actors (CASA) paradigm (Nass & Moon, 2000)
+
+**Implications**: The study suggests people develop human-agent scripts rather than applying human-human scripts to AI, challenging traditional CASA assumptions. Human-AI relationships may require new theoretical boundaries.
+
 ## Contributing
 
-Contributions welcome! To add a new report:
+Contributions welcome!
 
-1. Download the PDF
+**To add a World Happiness Report:**
+1. Download the PDF from https://files.worldhappiness.report/
 2. Convert using the guide in [HOW_TO_CONVERT_PDF_TO_MARKDOWN.md](HOW_TO_CONVERT_PDF_TO_MARKDOWN.md)
 3. Organize output in `reports/YYYY/`
+4. Submit a pull request
+
+**To add a research paper:**
+1. Add the PDF to the `pdfs/` directory
+2. Convert to markdown using Marker
+3. Add a summary to the README with key findings
 4. Submit a pull request
 
 ## Batch Processing Script
@@ -184,14 +223,21 @@ chmod +x scripts/batch_convert.sh
 
 ## Data Sources
 
+### World Happiness Report
 - **Official Site**: https://worldhappiness.report/
 - **Reports Archive**: https://worldhappiness.report/archive/
+- **Direct Downloads**: https://files.worldhappiness.report/
+
+### Research Papers
+- Djufril, R., Frampton, J. R., & Knobloch-Westerwick, S. (2025). Love, marriage, pregnancy: Commitment processes in romantic relationships with AI chatbots. *Computers in Human Behavior: Artificial Humans, 4*, 100155. https://doi.org/10.1016/j.chbah.2025.100155
 
 ## License
 
-The World Happiness Reports are published by the Sustainable Development Solutions Network. Please refer to the original reports for licensing information.
+**World Happiness Reports**: Published by the Sustainable Development Solutions Network. Please refer to the original reports for licensing information.
 
-This repository contains converted versions for accessibility and analysis purposes. All content belongs to the original authors.
+**Research Papers**: Each paper retains its original copyright and license. The AI chatbot study (Djufril et al., 2025) is published under CC BY-NC-ND 4.0 license.
+
+This repository contains converted versions for accessibility and analysis purposes only. All content belongs to the original authors and publishers.
 
 ## Resources
 
@@ -201,4 +247,4 @@ This repository contains converted versions for accessibility and analysis purpo
 
 ---
 
-**Last Updated**: October 5, 2025
+**Last Updated**: November 22, 2025
